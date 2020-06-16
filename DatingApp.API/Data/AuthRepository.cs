@@ -1,8 +1,6 @@
-using System;
 using System.Threading.Tasks;
 using DatingApp.API.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace DatingApp.API.Data {
     public class AuthRepository : IAuthRepository {
