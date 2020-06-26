@@ -8,7 +8,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './register/register.component';
@@ -25,6 +26,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
+    MemberCardComponent,
   ],
   imports: [
     BrowserModule,
