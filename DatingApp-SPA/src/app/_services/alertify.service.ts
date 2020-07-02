@@ -16,6 +16,8 @@ export class AlertifyService {
     });
   }
 
+
+
   success(message: string) {
     alertify.success(message);
   }
