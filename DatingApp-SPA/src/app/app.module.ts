@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   BrowserModule,
   HammerGestureConfig,
@@ -65,6 +65,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxGalleryModule,
     FileUploadModule,
     TabsModule.forRoot(),
