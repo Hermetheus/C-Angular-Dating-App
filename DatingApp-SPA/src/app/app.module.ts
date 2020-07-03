@@ -14,6 +14,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { TimeagoModule } from 'ngx-timeago';
 import { UserService } from 'src/app/_services/user.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -68,6 +69,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     ReactiveFormsModule,
     NgxGalleryModule,
     FileUploadModule,
+    TimeagoModule.forRoot(),
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
