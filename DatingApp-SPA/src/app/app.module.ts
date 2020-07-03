@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { UserService } from 'src/app/_services/user.service';
@@ -45,7 +46,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
     rotate: { enable: false },
   };
 }
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +69,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     NgxGalleryModule,
     FileUploadModule,
     TabsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { AlertifyService } from './../_services/alertify.service';
 import { AuthService } from './../_services/auth.service';
 
@@ -12,24 +13,53 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
   registerForm: FormGroup;
+  bsConfig: Partial<BsDatepickerConfig>;
 
   constructor(
     private authService: AuthService,
-    private alertify: AlertifyService
+    private alertify: AlertifyService,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.registerForm = new FormGroup(
+    (this.bsConfig = {
+      containerClass: 'theme-red',
+    }),
+      this.createRegisterForm();
+    // this.registerForm = new FormGroup(
+    //   {
+    //     username: new FormControl('', Validators.required),
+    //     password: new FormControl('', [
+    //       Validators.required,
+    //       Validators.minLength(4),
+    //       Validators.maxLength(8),
+    //     ]),
+    //     confirmPassword: new FormControl('', Validators.required),
+    //   },
+    //   this.passwordMatchValidator
+    // );
+  }
+
+  createRegisterForm() {
+    this.registerForm = this.fb.group(
       {
-        username: new FormControl('', Validators.required),
-        password: new FormControl('', [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(8),
-        ]),
-        confirmPassword: new FormControl('', Validators.required),
+        gender: ['male'],
+        username: ['', Validators.required],
+        knownAs: ['', Validators.required],
+        dateOfBirth: [null, Validators.required],
+        city: ['', Validators.required],
+        country: ['', Validators.required],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(8),
+          ],
+        ],
+        confirmPassword: ['', Validators.required],
       },
-      this.passwordMatchValidator
+      { validator: this.passwordMatchValidator }
     );
   }
 
