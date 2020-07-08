@@ -37,6 +37,7 @@ export class MemberListComponent implements OnInit {
 
     this.userParams.minAge = 18;
     this.userParams.maxAge = 99;
+    this.userParams.orderBy = 'lastActive';
   }
 
   pageChanged(event: any): void {
@@ -64,6 +65,7 @@ export class MemberListComponent implements OnInit {
         (res: PaginatedResult<User[]>) => {
           this.users = res.result;
           this.pagination = res.pagination;
+          // console.log(res.result);
         },
         (error) => {
           this.alertify.error(error);
