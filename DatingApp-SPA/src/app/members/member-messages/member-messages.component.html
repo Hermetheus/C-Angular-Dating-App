@@ -38,7 +38,7 @@
           </span>
           <div class="chat-body">
             <div class="header">
-              <small class="text-muted float-right">
+              <small class="text-muted">
                 <span class="fa fa-clock-o">{{
                   message.messageSent | timeago
                 }}</span>
@@ -49,12 +49,34 @@
                   (Read {{ message.dateRead | timeago }})
                 </span>
               </small>
-              <strong class="primary-font">{{ message.senderKnownAs }}</strong>
+              <strong class="primary-font float-right">{{
+                message.senderKnownAs
+              }}</strong>
             </div>
             <p>{{ message.content }}</p>
           </div>
         </div>
       </li>
     </ul>
+  </div>
+
+  <div class="card-footer">
+    <form #messageForm="ngForm" (ngSubmit)="messageForm.valid && sendMessage()">
+      <div class="input-group">
+        <input
+          [(ngModel)]="newMessage.content"
+          name="content"
+          required
+          type="text"
+          class="form-control input-sm"
+          placeholder="send a private message"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary" [disabled]="!messageForm.valid">
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
