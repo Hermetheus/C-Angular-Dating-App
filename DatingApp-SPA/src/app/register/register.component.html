@@ -1,9 +1,10 @@
 <form [formGroup]="registerForm" (ngSubmit)="register()">
   <h2 class="text-center text-primary">Sign Up</h2>
   <hr />
-
   <div class="form-group">
-    <label class="control-label" style="margin-right: 10px;">I am a: </label>
+    <label class="control-label" style="margin-right: 10px;">
+      I am a:
+    </label>
     <label class="radio-inline">
       <input
         class="mr-3"
@@ -11,6 +12,7 @@
         value="male"
         formControlName="gender"
       />Male
+      <h1></h1>
     </label>
     <label class="radio-inline ml-3">
       <input
@@ -18,10 +20,10 @@
         type="radio"
         value="female"
         formControlName="gender"
-      />Female
+      />
+      Female
     </label>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -36,7 +38,6 @@
     />
     <div class="invalid-feedback">Please choose a username</div>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -58,7 +59,6 @@
       Known as is required
     </div>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -83,7 +83,6 @@
       Date of Birth is required
     </div>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -104,7 +103,6 @@
       City is required
     </div>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -126,7 +124,6 @@
       Country is required
     </div>
   </div>
-
   <div class="form-group">
     <input
       [ngClass]="{
@@ -200,7 +197,6 @@
       Password's don't match.
     </div>
   </div>
-
   <div class="form-group text-center">
     <button
       class="btn btn-success"
